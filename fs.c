@@ -165,6 +165,7 @@ int allocate_file(char filename[12])
 
     // claim it
     inodes[inode_num].first_block_num = block_num;
+    inodes[inode_num].size=1;
     dbs[block_num].next_block_num = -2; // -2 means end of file
 
     // set the name
@@ -313,6 +314,7 @@ void read_file(char *data){
         begin_block_num = dbs[begin_block_num].next_block_num;
         printf("\n");
     }
+    printf("\n");
 };
 
 
